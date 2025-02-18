@@ -1,6 +1,5 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-
 import '../modelos/planeta.dart';
 
 class ControlePlaneta {
@@ -20,6 +19,7 @@ class ControlePlaneta {
 
   Future<void> _criarBD(Database db, int version) async {
     const sql = '''
+    
 CREATE TABLE planetas (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   nome TEXT NOT NULL,
@@ -28,6 +28,7 @@ CREATE TABLE planetas (
   apelido TEXT
 );
 ''';
+    
     await db.execute(sql);
   }
 
@@ -51,7 +52,6 @@ CREATE TABLE planetas (
       whereArgs: [planeta.id],
     );
   }
-
   Future<int> excluirPlaneta(int id) async {
     final db = await bd;
     return await db.delete('planetas', where: 'id = ?', whereArgs: [id]);
