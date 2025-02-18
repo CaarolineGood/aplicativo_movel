@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'controles/controle-planeta.dart';
 import 'modelos/planeta.dart';
 import 'telas/tela-planeta.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,6 +14,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      
       home: const MyHomePage(title: 'App - Planetas'),
     );
   }
@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
 
   @override
@@ -58,9 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 _atualizarPlanetas();
               },
             ),
-      ),
-    );
-  }
+          ),
+        );
+      }
 
   void _alterarPlaneta(BuildContext context, Planeta planeta) {
     Navigator.push(
@@ -74,9 +73,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 _atualizarPlanetas();
               },
             ),
-      ),
-    );
-  }
+          ),
+        );
+      }
 
   void _excluirPlaneta(int id) async {
     await _controlePlaneta.excluirPlaneta(id);
@@ -90,6 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
+      
       body: ListView.builder(
         itemCount: _planetas.length,
         itemBuilder: (context, index) {
@@ -113,6 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         },
       ),
+      
       floatingActionButton: FloatingActionButton(
         onPressed: () => _incluirPlaneta(context),
         tooltip: 'Increment',
