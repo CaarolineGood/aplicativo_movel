@@ -19,14 +19,11 @@ class TelaPlaneta extends StatefulWidget {
 
 class _TelaPlanetaState extends State<TelaPlaneta> {
   final _formKey = GlobalKey<FormState>();
-
   final TextEditingController _nomeController = TextEditingController();
   final TextEditingController _tamanhoController = TextEditingController();
   final TextEditingController _distanciaController = TextEditingController();
   final TextEditingController _apelidoController = TextEditingController();
-
   final ControlePlaneta _controlePlaneta = ControlePlaneta();
-
   late Planeta _planeta;
 
   @override
