@@ -5,7 +5,6 @@ class Planeta {
   double distancia;
   String? apelido;
 
-  // Construtor da classe Planeta
   Planeta({
     this.id,
     required this.nome,
@@ -14,7 +13,6 @@ class Planeta {
     this.apelido,
   });
 
-  // Construtor alternativo
   Planeta.vazio() : nome = '', tamanho = 0.0, distancia = 0.0, apelido = '';
 
   factory Planeta.fromMap(Map<String, dynamic> map) {
